@@ -6,9 +6,11 @@ import MovieItem from '../MovieItem/MovieItem'
 
 function MovieList() {
 
+    // creating variables for the tools we need to use
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
 
+    // allows the movies to load on page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
@@ -17,9 +19,11 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <section className="movies">
+                {/* mapping over the movies that are stored within the movies store */}
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
+                            {/* routes to a component to create each individual item */}
                             <MovieItem movie={movie} />
                         </div>
                     );
