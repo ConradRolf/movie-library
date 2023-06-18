@@ -1,6 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 // importing all necessary tools for the app
 
 function MovieDetails() {
@@ -20,25 +31,41 @@ function MovieDetails() {
 
     return (
         <div>
-            <button onClick={backButton}>Go Back</button>
-            {/* mapping over the single movie that was added into the store after it was reset */}
-            {movies.map(movie => {
-                return (
-                    <div key={movie.id} >
-                        <h3>{movie.title}</h3>
-                        <img src={movie.poster} alt={movie.title} />
-                    </div>
-                );
-            })}
-            <h3>Genres:</h3>
-            {/* mapping over the details that were retrieved for the movie */}
-            {details.map(detail => {
-                return (
-                    <div key={detail.id} >
-                        <p>{detail.name}</p>
-                    </div>
-                );
-            })}
+            <Grid item sm={6} lg={3} display='flex' >
+                <Card sx={{ width: '100%' }}>
+                    {movies.map(movie => {
+                        return (
+                            <img src={movie.poster}></img>
+                        )
+                    })}
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            {movies.map(movie => {
+                                return (
+                                    <p>{movie.title}</p>
+                                )
+                            })}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div">
+                            Genres:
+                        </Typography>
+                        <Typography varient="body2" color="text.secondary">
+                            {details.map(detail => {
+                                return (
+                                    <div key={detail.id} >
+                                        <p>{detail.name}</p>
+                                    </div>
+                                );
+                            })}
+                        </Typography>
+                        <CardActions>
+                            <Button onClick={backButton} size="small">
+                                Go Back
+                            </Button>
+                        </CardActions>
+                    </CardContent>
+                </Card>
+            </Grid>
         </div>
     )
 }

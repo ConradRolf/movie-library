@@ -2,6 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 import MovieItem from '../MovieItem/MovieItem'
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 // importing all necessary tools for the app
 
 function MovieList() {
@@ -16,21 +23,20 @@ function MovieList() {
     }, []);
 
     return (
-        <main>
-            <h1>MovieList</h1>
-            <section className="movies">
-                {/* mapping over the movies that are stored within the movies store */}
-                {movies.map(movie => {
-                    return (
-                        <div key={movie.id} >
-                            {/* routes to a component to create each individual item */}
+        <>
+            <Container fixed>
+                <Typography gutterBottom variant="h5" component="div">
+                    Movie List
+                </Typography>
+                <Grid container spacing={2}>
+                    {movies.map(movie => (
+                        <Grid item sm={6} lg={3} key={movie.id} display='flex' >
                             <MovieItem movie={movie} />
-                        </div>
-                    );
-                })}
-            </section>
-        </main>
-
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+        </>
     );
 }
 
