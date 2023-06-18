@@ -9,6 +9,8 @@ function MovieItem(props) {
 
     const getDetails = () => {
         console.log('You clicked on: ', props.movie.title, props.movie.id)
+        dispatch({ type: 'RESET_MOVIES' })
+        dispatch({ type: 'FETCH_MOVIE', payload: props.movie.id })
         dispatch({ type: 'FETCH_DETAILS', payload: props.movie.id })
         history.push('/details')
     }
