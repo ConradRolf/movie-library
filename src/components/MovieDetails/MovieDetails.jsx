@@ -32,10 +32,10 @@ function MovieDetails() {
             })}
             <h3>Genres:</h3>
             {/* mapping over the details that were retrieved for the movie */}
-            {details.map((detail, i) => {
+            {details.map(detail => {
                 return (
                     // i was used for the key because using the movie id caused an error with duplicate keys
-                    <div key={i} >
+                    <div key={detail.id} >
                         <p>{detail.name}</p>
                     </div>
                 );

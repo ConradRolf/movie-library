@@ -3,9 +3,10 @@ const router = express.Router();
 const pool = require('../modules/pool')
 // importing all necessary tools for the app
 
+// get route to retrieve the details for the movie that was clicked on
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  const query = `SELECT "genres"."name", "movies"."id" FROM "movies" 
+  const query = `SELECT "genres"."name", "genres"."id" FROM "movies" 
   JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
   JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
   WHERE "movies"."id" = '${id}';`;
