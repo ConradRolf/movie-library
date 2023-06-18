@@ -30,9 +30,9 @@ function* fetchAllMovies() {
 
 }
 
-function* fetchDetails() {
+function* fetchDetails(action) {
     try {
-        const theMovie = yield axios.get(`/api/movie/${action.payload}`)
+        const theMovie = yield axios.get(`/api/genre/${action.payload}`)
         console.log(action.payload)
         yield put({ type: 'SET_GENRES', payload: theMovie.data })
         console.log(theMovie.data)
