@@ -4,7 +4,7 @@ const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
   const id = req.params.id
-  const query = `SELECT "movies"."title", "genres"."name" FROM "movies" 
+  const query = `SELECT "movies"."title", "genres"."name", "movies"."id" FROM "movies" 
   JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
   JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
   WHERE "movies"."id" = '${id}';`;
