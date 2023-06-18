@@ -1,7 +1,13 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 function MovieItem(props) {
 
+    const dispatch = useDispatch();
+
     const getDetails = () => {
-        dispatch({ type: 'FETCH_MOVIE', payload: movie.id })
+        console.log('You clicked on: ', props.movie.title, props.movie.id)
+        dispatch({ type: 'FETCH_DETAILS', payload: props.movie.id })
     }
 
     return (
