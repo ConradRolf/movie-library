@@ -8,7 +8,6 @@ import '@fontsource/roboto/700.css';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -31,7 +30,11 @@ function MovieDetails() {
 
     return (
         <div>
-            <Grid item sm={6} lg={3} display='flex' >
+            <Grid 
+                item sm={6} lg={3}
+                direction="column"
+                alignItems="center"
+                justifyContent="center">
                 <Card sx={{ width: '100%' }}>
                     {movies.map(movie => {
                         return (
@@ -59,7 +62,7 @@ function MovieDetails() {
                             })}
                         </Typography>
                         <CardActions>
-                            <Button onClick={backButton} size="small">
+                            <Button onClick={backButton} size="medium">
                                 Go Back
                             </Button>
                         </CardActions>
