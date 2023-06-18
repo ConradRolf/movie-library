@@ -5,11 +5,13 @@ import { useHistory } from 'react-router-dom';
 
 function MovieDetails() {
 
+    // creating variables for the tools we need to use
     const dispatch = useDispatch();
     const history = useHistory();
     const details = useSelector(store => store.genres);
     const movies = useSelector(store => store.movies);
 
+    // creating a function to go back to the home page and reset the stores that we have in the index
     const backButton = () => {
         dispatch({ type: 'RESET_DETAILS' })
         dispatch({ type: 'RESET_MOVIES' })
@@ -19,6 +21,7 @@ function MovieDetails() {
     return (
         <div>
             <button onClick={backButton}>Go Back</button>
+            {/* mapping over the single movie that was added into the store after it was reset */}
             {movies.map(movie => {
                 return (
                     <div key={movie.id} >
@@ -28,8 +31,10 @@ function MovieDetails() {
                 );
             })}
             <h3>Genres:</h3>
+            {/* mapping over the details that were retrieved for the movie */}
             {details.map((detail, i) => {
                 return (
+                    // i was used for the key because using the movie id caused an error with duplicate keys
                     <div key={i} >
                         <p>{detail.name}</p>
                     </div>
