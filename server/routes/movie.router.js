@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 // importing all necessary tools for the app
 
+// get route to retrieve all movies
 router.get('/', (req, res) => {
 
   const query = `SELECT * FROM movies ORDER BY "title" ASC`;
@@ -17,6 +18,7 @@ router.get('/', (req, res) => {
 
 });
 
+// get route to retrieve a specific movie that was clicked on
 router.get('/:id', (req, res) => {
   const id = req.params.id
   const query = `SELECT * FROM movies WHERE id = ${id}`;
