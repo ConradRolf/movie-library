@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
+// importing all necessary tools for the app
 
 router.get('/', (req, res) => {
 

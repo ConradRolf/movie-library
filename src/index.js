@@ -10,6 +10,7 @@ import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import { takeEvery, put } from 'redux-saga/effects';
 import axios from 'axios';
+// importing all necessary tools for the app
 
 // Create the rootSaga generator function
 function* rootSaga() {
@@ -18,6 +19,7 @@ function* rootSaga() {
     yield takeEvery('FETCH_MOVIE', fetchMovie);
 }
 
+// saga to retrieve all stored movies
 function* fetchAllMovies() {
     // get all movies from the DB
     try {
@@ -30,6 +32,7 @@ function* fetchAllMovies() {
 
 }
 
+// saga to retrieve the movie that is clicked on
 function* fetchMovie(action) {
     try {
         const movies = yield axios.get(`/api/movie/${action.payload}`);
@@ -41,6 +44,7 @@ function* fetchMovie(action) {
 
 }
 
+// saga to retrieve the movie genres when a poster is clicked on
 function* fetchDetails(action) {
     try {
         const theMovie = yield axios.get(`/api/genre/${action.payload}`)
@@ -60,6 +64,7 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
+        // added in a reset to the store to allow it to be used for the details page
         case 'RESET_MOVIES':
             return [];
         default:
@@ -72,6 +77,7 @@ const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
             return action.payload;
+        // added in a reset to make sure that leftover genres don't appear on the details page
         case 'RESET_DETAILS':
             return [];
         default:
