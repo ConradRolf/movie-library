@@ -8,11 +8,13 @@ function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
+      {/* creating a route for the home page of the app */}
       <Router>        
         <Route path="/" exact>
           <MovieList />
         </Route>
         
+        {/* creating a route that will show the details of a movie when it is clicked on */}
         <Route path="/details" exact>
           <MovieDetails />
         </Route>
