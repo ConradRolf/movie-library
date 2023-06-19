@@ -30,7 +30,7 @@ function MovieDetails() {
 
     return (
         <div>
-            <Grid 
+            <Grid
                 item sm={6} lg={3}
                 direction="column"
                 alignItems="center"
@@ -47,6 +47,18 @@ function MovieDetails() {
                                 return (
                                     <p>{movie.title}</p>
                                 )
+                            })}
+                        </Typography>
+                        <Typography gutterBottom variant="h6" component="div">
+                            Description:
+                        </Typography>
+                        <Typography varient="body3" color="text.secondary">
+                            {movies.map((movie, i) => {
+                                return (
+                                    <div key={i} >
+                                        <p>{movie.description}</p>
+                                    </div>
+                                );
                             })}
                         </Typography>
                         <Typography gutterBottom variant="h6" component="div">
