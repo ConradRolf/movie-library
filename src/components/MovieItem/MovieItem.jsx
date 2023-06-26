@@ -7,6 +7,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Carousel from 'react-material-ui-carousel';
+import Paper from '@mui/material';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -30,9 +32,9 @@ function MovieItem(props) {
         <>
             {/* <h3>{props.movie.title}</h3>
             <img onClick={getDetails} src={props.movie.poster} alt={props.movie.title} /> */}
-            <Card sx={{ width: '100%' }}>
+            <Card>
                 <CardMedia
-                    sx={{ height: 400 }}
+                    sx={{ height: 450 }}
                     image={props.movie.poster}
                     title={props.movie.title}
                 />

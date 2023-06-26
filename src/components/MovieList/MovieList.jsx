@@ -9,6 +9,7 @@ import '@fontsource/roboto/700.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import Carousel from 'react-material-ui-carousel';
 // importing all necessary tools for the app
 
 function MovieList() {
@@ -28,13 +29,13 @@ function MovieList() {
                 <Typography gutterBottom variant="h5" component="div">
                     Movie List
                 </Typography>
-                <Grid container spacing={2}>
+                <div className="carousel-container">
+                <Carousel>
                     {movies.map(movie => (
-                        <Grid item sm={6} lg={3} key={movie.id} display='flex' >
-                            <MovieItem movie={movie} />
-                        </Grid>
+                        <MovieItem movie={movie} />
                     ))}
-                </Grid>
+                </Carousel>
+                </div>
             </Container>
         </>
     );

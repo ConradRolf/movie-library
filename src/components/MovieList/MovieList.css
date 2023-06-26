@@ -1,4 +1,13 @@
 .movies {
-    display : flex;
+    display: flex;
     flex-wrap: wrap;
+}
+
+.carousel-container {
+    max-width: 300px;
+    margin: auto;
+  }
+
+body{
+    background-color: rgb(48, 85, 185);
 }
