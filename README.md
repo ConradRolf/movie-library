@@ -1,20 +1,10 @@
-# PROJECT NAME
+# Movie Library
 
 ## Description
 
-_Duration: 2 Week Sprint_
+_Duration: 3 days_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
-
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
-
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
+The Movie Library app is a small application to help a client view the different movies they were interested in with a short summary of each movie on a details page for their enjoyment.
 
 ### Prerequisites
 
@@ -57,7 +47,7 @@ List technologies and frameworks here
 _Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.
 
 ## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+If you have suggestions or issues, please email me at [williamconradrolf@gmail.com](www.google.com)
